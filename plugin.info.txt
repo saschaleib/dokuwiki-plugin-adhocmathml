@@ -1,0 +1,7 @@
+base     adhocmathml
+author   Sascha Leib
+email    sascha.leib(at)kolmio.com
+date     2023-05-08
+name     Ad-Hoc Plugin MathML Extension
+desc     Enables MathML markup in DokuWiki (under development!) Requires Ad-Hoc Tags Plugin
+url      https://www.dokuwiki.org/plugin:adhocmathml
