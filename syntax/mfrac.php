@@ -19,8 +19,8 @@ class syntax_plugin_adhocmathml_mfrac extends syntax_plugin_adhocmathml_abstract
 		
 		switch (trim($name)) {
 			
-			case 'linethickness':
-				return true; /* TODO */
+			case 'linethickness':  /* length-percentages */
+				return preg_match('/^[\w\d\%]+$/', trim($value));
 				break;
 
 			default:

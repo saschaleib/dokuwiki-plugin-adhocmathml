@@ -23,8 +23,8 @@ class syntax_plugin_adhocmathml_mpadded extends syntax_plugin_adhocmathml_abstra
 			case 'height':
 			case 'depth':
 			case 'lspace':
-			case 'voffset':
-				return true; /* TODO */
+			case 'voffset':  /* length-percentages */
+				return preg_match('/^[\w\d\%]+$/', trim($value));
 				break;
 
 			default:

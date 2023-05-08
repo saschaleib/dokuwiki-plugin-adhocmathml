@@ -27,6 +27,10 @@ class syntax_plugin_adhocmathml_math extends syntax_plugin_adhocmathml_abstract 
 				return true;
 				break;
 
+			case 'xmlns':
+				return (trim($value) == 'http://www.w3.org/1998/Math/MathML');
+				break;
+
 			default:
 				return false;
 		}

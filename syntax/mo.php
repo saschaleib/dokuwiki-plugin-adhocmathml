@@ -19,20 +19,20 @@ class syntax_plugin_adhocmathml_mo extends syntax_plugin_adhocmathml_abstract {
 		
 		switch (trim($name)) {
 			
-			case 'stretchy':
-			case 'symmetric':
+			case 'fence':
 			case 'largeop':
 			case 'movablelimits':
+			case 'separator':
+			case 'stretchy':
+			case 'symmetric':
 				return in_array(strtolower($value), array('true','false'));
 				break;
 
-			case 'fence':
 			case 'lspace':
 			case 'maxsize':
 			case 'minsize':
-			case 'rspace':
-			case 'separator':
-				return true; /* TODO */
+			case 'rspace':  /* length-percentages */
+				return preg_match('/^[\w\d\%]+$/', trim($value));
 				break;
 
 			default:

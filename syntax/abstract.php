@@ -27,7 +27,7 @@ class syntax_plugin_adhocmathml_abstract extends syntax_plugin_adhoctags_abstrac
 		switch (trim($name)) {
 			
 			case 'displaystyle': 
-				return in_array(strtolower($value), array('true','false'));
+				return (substr($value, 0, 11) !== 'javascript:');
 				break;
 
 			case 'mathbackground': /* colours */
@@ -44,7 +44,11 @@ class syntax_plugin_adhocmathml_abstract extends syntax_plugin_adhoctags_abstrac
 				break;
 
 			case 'scriptlevel':	/* sets the math-depth of an element  */
-				return preg_match('/^[\d]+$/', trim($value));
+				return preg_match('/^[+-]?[\d]+$/', trim($value));
+				break;
+
+			case 'href': 
+				return in_array(strtolower($value), array('true','false'));
 				break;
 
 			default:

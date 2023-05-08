@@ -21,8 +21,8 @@ class syntax_plugin_adhocmathml_mspace extends syntax_plugin_adhocmathml_abstrac
 			
 			case 'width':
 			case 'height':
-			case 'depth':
-				return true; /* TODO */
+			case 'depth':  /* length-percentages */
+				return preg_match('/^[\w\d\%]+$/', trim($value));
 				break;
 
 			default:
