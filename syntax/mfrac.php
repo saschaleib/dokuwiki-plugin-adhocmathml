@@ -23,6 +23,10 @@ class syntax_plugin_adhocmathml_mfrac extends syntax_plugin_adhocmathml_abstract
 				return preg_match('/^[\w\d\%]+$/', trim($value));
 				break;
 
+			case 'bevelled':  /* empty attribute or boolean */
+				return in_array(strtolower(trim($value)), array('true','','bevelled'));
+				break;
+
 			default:
 				return false;
 		}
